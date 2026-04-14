@@ -1,14 +1,16 @@
 <footer class="site-footer">
   <nav class="footer-links">
-    <a href="#">Archive</a>
     <a href="{{ "index.xml" | relURL }}">RSS</a>
-    <a href="#">About</a>
-    <a href="#">GitHub</a>
+    <a href="https://github.com/Savageman/Golang-Notes">GitHub</a>
   </nav>
   <svg class="footer-doodle" width="120" height="30" viewBox="0 0 120 30" fill="none" stroke="currentColor">
     <path d="M0 26 Q10 22, 20 26 T40 26 T60 26 T80 26 T100 26 T120 26" stroke-opacity="0.6" stroke-width="1.5"/>
     <path d="M0 18 Q10 14, 20 18 T40 18 T60 18 T80 18 T100 18 T120 18" stroke-opacity="0.45" stroke-width="1.5"/>
     <path d="M0 10 Q10 6, 20 10 T40 10 T60 10 T80 10 T100 10 T120 10" stroke-opacity="0.3" stroke-width="1.5"/>
   </svg>
-  <p>&copy; {{ now.Year }} {{ .Site.Title }}. All rights reserved.</p>
+  {{- $pages := where .Site.RegularPages "Section" "posts" -}}
+  {{- $latest := index $pages 0 -}}
+  {{- with $latest.GitInfo -}}
+  <p><a href="https://github.com/Savageman/Golang-Notes/commit/{{ .Hash }}">{{ .AbbreviatedHash }}</a></p>
+  {{- end -}}
 </footer>

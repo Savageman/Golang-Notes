@@ -2,6 +2,7 @@ baseURL = "https://Savageman.github.io/golang-notes/"
 languageCode = "en-uk"
 title = "Golang Notes"
 
+enableGitInfo = true
 ignoreFiles = ["^\\.idea/"]
 
 [markup]
