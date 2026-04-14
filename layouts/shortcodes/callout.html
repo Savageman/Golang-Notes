@@ -1,0 +1,5 @@
+<aside class="callout callout-{{ .Get "type" }}">
+  {{ if .Get "title" }}<strong>{{ .Get "title" }}</strong>{{ end }}
+  {{ .Inner | markdownify }}
+  {{ if .Get "footer" }}<footer>{{ .Get "footer" }}</footer>{{ end }}
+</aside>

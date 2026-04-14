@@ -1,0 +1,43 @@
+{{ define "main" }}
+<div class="scroll-progress"></div>
+
+<main class="article-wrapper">
+<div class="article-card">
+
+  <header class="article-hero">
+    <div class="article-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+      <span>&middot;</span>
+      <span>{{ .ReadingTime }} min read</span>
+    </div>
+    <h1>{{ .Title }}</h1>
+    <p class="byline"><a rel="author" href="#">{{ .Params.author }}</a></p>
+    <div class="tags">
+      {{ range .Params.tags }}<span>{{ . }}</span>{{ end }}
+    </div>
+  </header>
+
+  <div class="stripe hero-green">
+    <span></span><span></span><span></span><span></span>
+  </div>
+  <div class="stripe reverse hero-beige">
+    <span></span><span></span><span></span><span></span>
+  </div>
+
+  <article class="article-body">
+    {{ .Content }}
+  </article>
+
+</div>
+</main>
+{{ end }}
+
+{{ define "footer-stripe" }}
+<div class="stripe beige">
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="{{ "js/article.js" | relURL }}"></script>
+{{ end }}

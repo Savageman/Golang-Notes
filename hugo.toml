@@ -1,0 +1,20 @@
+baseURL = "https://Savageman.github.io/golang-notes/"
+languageCode = "en-uk"
+title = "Golang Notes"
+
+ignoreFiles = ["^\\.idea/"]
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+    lineNos = false
+    guessSyntax = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS"]
+
+[params]
+  description = "Notes on Go"

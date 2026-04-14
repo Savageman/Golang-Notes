@@ -1,0 +1,25 @@
+{{ define "main" }}
+<main class="index-wrapper">
+  {{ range where .Site.RegularPages "Section" "posts" }}
+  <article class="index-card">
+    <a href="{{ .RelPermalink }}" class="index-card-link">
+      <div class="index-card-hero">
+        <div class="article-meta">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2 January 2006" }}</time>
+          <span>&middot;</span>
+          <span>{{ .ReadingTime }} min read</span>
+        </div>
+        <h2>{{ .Title }}</h2>
+        <p class="byline">{{ .Params.author }}</p>
+      </div>
+      <div class="index-card-body">
+        <p>{{ .Summary }}</p>
+        <div class="tags">
+          {{ range .Params.tags }}<span>{{ . }}</span>{{ end }}
+        </div>
+      </div>
+    </a>
+  </article>
+  {{ end }}
+</main>
+{{ end }}

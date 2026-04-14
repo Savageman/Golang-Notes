@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Site.Title }}</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" href="{{ "css/blog.css" | relURL }}">
+  <link rel="stylesheet" href="{{ "css/syntax.css" | relURL }}">
+  {{ block "head" . }}{{ end }}
+</head>
+<body>
+
+{{ partial "header.html" . }}
+
+<div class="stripe green reverse">
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+
+{{ block "main" . }}{{ end }}
+
+{{ block "footer-stripe" . }}
+<div class="stripe index-footer-stripe">
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
+{{ end }}
+
+{{ partial "footer.html" . }}
+
+<script src="{{ "js/darkmode.js" | relURL }}"></script>
+{{ block "scripts" . }}{{ end }}
+</body>
+</html>
