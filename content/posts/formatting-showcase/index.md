@@ -130,8 +130,8 @@ func (r *Ring) maxLoad() float64 {
 
 A short snippet to show minimal code blocks:
 
-```go
-fmt.Println("hello, world")
+```go {hl_lines=[1]}
+func ListenAndServe(addr string, handler Handler) error
 ```
 
 Highlighted lines draw attention to new or important code — use `hl_lines` in the fence attributes:

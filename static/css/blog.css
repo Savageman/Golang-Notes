@@ -473,7 +473,7 @@ pre {
   font-family: "SF Mono", "Fira Code", "Consolas", monospace;
   font-size: 0.85rem;
   line-height: 1.65;
-  padding: 0.7rem 0.9rem;
+  padding: 0.45rem 0.9rem;
   border-radius: 6px;
   overflow-x: auto;
   margin-bottom: 1.5rem;
@@ -729,10 +729,10 @@ pre code {
 /* --- code block: copy button (visible on hover) --- */
 .copy-btn {
   position: absolute;
-  top: 0.5rem;
+  top: 0.45rem;
   right: 0.5rem;
-  background: var(--sand);
-  border: 1px solid var(--taupe);
+  background: #e8e8e8;
+  border: 1px solid #ccc;
   border-radius: 4px;
   padding: 0.3em 0.6em;
   cursor: pointer;
@@ -741,12 +741,12 @@ pre code {
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--espresso);
+  color: #555;
   opacity: 0;
   transition: opacity 0.2s, background 0.2s;
 }
 pre:hover > .copy-btn { opacity: 1; }
-.copy-btn:hover  { background: var(--taupe); }
+.copy-btn:hover  { background: #d0d0d0; }
 .copy-btn.copied { opacity: 1; background: var(--sage-pale); color: var(--forest); }
 
 /* --- drop cap on intro paragraph --- */
