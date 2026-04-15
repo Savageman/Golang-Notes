@@ -156,12 +156,13 @@ func (r *Ring) Get(key string) (Node, error) {
 
 Six callout types are available via the `callout` shortcode. Each has a
 coloured left border stripe, optional title, body, and optional footer.
-
-### Quote
+Here is one right after a paragraph:
 
 {{< callout type="quote" footer="— Grace Hopper" >}}
 "The most dangerous phrase in the language is: we've always done it this way."
 {{< /callout >}}
+
+The remaining callouts each follow an `h3` subtitle:
 
 ### Informational
 
