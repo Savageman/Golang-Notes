@@ -27,16 +27,10 @@
   /* --- accent --- */
   --gold:         #B8965A;
 
-  /* --- code syntax (rednafi-inspired) --- */
-  --code-bg:      #F2F1EB;
-  --code-text:    #1A1A1A;
-  --code-border:  #DDD;
-  --code-kw:      #5317AC;
-  --code-fn:      #721045;
-  --code-type:    #005A5F;
-  --code-str:     #2544BB;
-  --code-cmt:     #808080;
-  --code-builtin: #8F0075;
+  /* --- code syntax (github) --- */
+  --code-bg:      #f7f7f7;
+  --code-text:    #1f2328;
+  --code-border:  #d1d9e0;
 
   /* --- callout palettes --- */
   --info-light:   #E8EEF6;
@@ -479,13 +473,12 @@ pre {
   font-family: "SF Mono", "Fira Code", "Consolas", monospace;
   font-size: 0.85rem;
   line-height: 1.65;
-  padding: 1.5rem;
+  padding: 0.7rem 0.9rem;
   border-radius: 6px;
   overflow-x: auto;
   margin-bottom: 1.5rem;
   border: 1px solid var(--code-border);
 }
-/* Manual syntax classes removed — now handled by Chroma via syntax.css */
 
 /* --- inline code --- */
 code {
@@ -716,24 +709,12 @@ pre code {
   transform: translateY(0);
 }
 
-/* --- code block: language badge (Hugo/Chroma output) --- */
+/* --- code block: language badge — hidden --- */
 .highlight code[data-lang]::before {
-  content: attr(data-lang);
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 0.25em 0.8em;
-  background: var(--sage);
-  color: var(--forest);
-  border-radius: 0 0 6px 0;
+  display: none;
 }
 
-/* --- code block: copy button --- */
+/* --- code block: copy button (visible on hover) --- */
 .copy-btn {
   position: absolute;
   top: 0.5rem;
@@ -749,10 +730,12 @@ pre code {
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--espresso);
-  transition: background 0.2s;
+  opacity: 0;
+  transition: opacity 0.2s, background 0.2s;
 }
+pre:hover > .copy-btn { opacity: 1; }
 .copy-btn:hover  { background: var(--taupe); }
-.copy-btn.copied { background: var(--sage-pale); color: var(--forest); }
+.copy-btn.copied { opacity: 1; background: var(--sage-pale); color: var(--forest); }
 
 /* --- drop cap on intro paragraph --- */
 #intro > p:first-child::first-letter {
@@ -904,15 +887,9 @@ body.dark {
 
   --gold:       #d4aa6a;
 
-  --code-bg:      #1c1a16;
-  --code-text:    #d4c5b2;
-  --code-border:  #352e24;
-  --code-kw:      #c49dff;
-  --code-fn:      #e88aa5;
-  --code-type:    #5ac8c8;
-  --code-str:     #7aa2f7;
-  --code-cmt:     #6a6a6a;
-  --code-builtin: #d78fff;
+  --code-bg:      #0d1117;
+  --code-text:    #e6edf3;
+  --code-border:  #30363d;
 
   --info-light:   #1c2230;
   --info-mid:     #3a5580;
