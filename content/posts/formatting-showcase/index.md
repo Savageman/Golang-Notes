@@ -134,6 +134,21 @@ A short snippet to show minimal code blocks:
 fmt.Println("hello, world")
 ```
 
+Highlighted lines draw attention to new or important code — use `hl_lines` in the fence attributes:
+
+```go {hl_lines=[3,5,"7-9"]}
+func (r *Ring) Get(key string) (Node, error) {
+	r.mu.RLock()
+	defer r.mu.RUnlock()           // highlighted
+
+	hash := r.hashFn([]byte(key))  // highlighted
+	idx := sort.Search(len(r.nodes), func(i int) bool {
+		return r.nodes[i].hash >= hash  // highlighted
+	}) % len(r.nodes)                   // range
+	return r.nodes[idx], nil
+}
+```
+
 </div>
 
 <div class="section" id="callouts">
